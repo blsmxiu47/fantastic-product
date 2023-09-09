@@ -3,12 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
-    const [whyIntelliflex, setWhyIntelliflex] = useState(false);
-    const [resources, setResources] = useState(false);
 
-    const [rotateChevron, setRotateChevron] = useState(false);
-    const handleRotate = () => setRotateChevron(!rotateChevron);
-    const rotate = rotateChevron ? "rotate(180deg)" : "rotate(0)"
+    const handleDropdownClick = (targetId: string) => {
+        const targetMenu = document.getElementById(`${targetId}-menu`);
+        // unhide menu
+        targetMenu?.classList.toggle('hidden');
+        const targetChevron = document.getElementById(`${targetId}-chevron`);
+        // rotate chevron
+        targetChevron?.classList.toggle('rotate-90');
+    }
 
     return (
         <>
@@ -46,28 +49,33 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <nav className={`${mobileNavOpen ? '': 'hidden'} flex flex-col justify-between border-b border-gray-400 py-8 px-2`}>
+            <nav className={`${mobileNavOpen ? '': 'hidden'} flex flex-col justify-between pt-8 px-2`}>
                 <div>
                     <ul>
                         <li className="border-b border-gray-400">
                             <button
-                                className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700"
-                                onClick={() => setWhyIntelliflex((prev) => !prev)}
+                                id="why-intelliflex"
+                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700"
+                                onClick={() => handleDropdownClick('why-intelliflex')}
                             >
                                 <span>Why IntellifleX?</span>
                                 <svg
+                                    id="why-intelliflex-chevron"
                                     fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    className="inline w-4 h-4 mt-1 ml-1 active:rotate-90 md:-mt-1"
+                                    viewBox="0 0 16 16"
+                                    className="transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle"
                                 >
                                     <path
                                         fillRule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                                         clipRule="evenodd"
                                     />
                                 </svg>
                             </button>
-                            <nav className={`${whyIntelliflex ? '': 'hidden'} text-pink-300 pl-2`}>
+                            <nav
+                                id='why-intelliflex-menu'
+                                className="hidden text-pink-300 pl-2"
+                            >
                                 <ul>
                                     <li className="">
                                         <NavLink to="/why-intelliflex/managers">
@@ -92,49 +100,66 @@ const Header = () => {
                                 </ul>
                             </nav>
                         </li>
-                        <li>
-                            <button className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="border-b border-gray-400">
+                            <button
+                                id="resources"
+                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700"
+                                onClick={() => handleDropdownClick('resources')}
+                            >
                                 <span>Resources</span>
-                                <div>
-                                    <div className="">
-                                        <ul>
-                                            <li className="">
-                                                <NavLink to="/resources/testimony">
-                                                    Testimony
-                                                </NavLink>
-                                            </li>
-                                            <li className="menu-item">
-                                                <NavLink to="/resources/guides-and-tutorials">
-                                                    Guides & Tutorials
-                                                </NavLink>
-                                            </li>
-                                            <li className="menu-item">
-                                                <NavLink to="/resources/api-docs">
-                                                    API Docs
-                                                </NavLink>
-                                            </li>
-                                            <li className="menu-item">
-                                                <NavLink to="/resources/blog">
-                                                    Blog
-                                                </NavLink>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <svg
+                                    id="resources-chevron"
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                    className="transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
                             </button>
+                            <nav
+                                id='resources-menu'
+                                className="hidden text-pink-300 pl-2"
+                            >
+                                <ul>
+                                    <li>
+                                        <NavLink to="/resources/testimony">
+                                            Testimony
+                                        </NavLink>
+                                    </li>
+                                    <li className="menu-item">
+                                        <NavLink to="/resources/guides-and-tutorials">
+                                            Guides & Tutorials
+                                        </NavLink>
+                                    </li>
+                                    <li className="menu-item">
+                                        <NavLink to="/resources/api-docs">
+                                            API Docs
+                                        </NavLink>
+                                    </li>
+                                    <li className="menu-item">
+                                        <NavLink to="/resources/blog">
+                                            Blog
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </nav>
                         </li>
-                        <li>
-                            <NavLink to="/download" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="border-b border-gray-400">
+                            <NavLink to="/download" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
                                 Download
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/mission" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="border-b border-gray-400">
+                            <NavLink to="/mission" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
                                 Mission
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/pricing" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="border-b border-gray-400">
+                            <NavLink to="/pricing" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
                                 Pricing
                             </NavLink>
                         </li>
@@ -142,19 +167,21 @@ const Header = () => {
                 </div>
                 <div>
                     <ul>
-                        <li>
-                            <NavLink to="/book-a-demo" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="border-b border-gray-400">
+                            <NavLink to="/book-a-demo" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
                                 Book a Demo
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/log-in" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
-                                Log In
-                            </NavLink>
+                        <li className="pt-6 pb-2">
+                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600">
+                                <NavLink to="/log-in" className="text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-pink-700">
+                                    Log In
+                                </NavLink>
+                            </button>
                         </li>
-                        <li>
-                            <button>
-                                <NavLink to="/get-started" className="text-sm font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <li className="py-2">
+                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600">
+                                <NavLink to="/get-started" className="text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-pink-700">
                                     Get Started
                                 </NavLink>
                             </button>
