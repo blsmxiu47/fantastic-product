@@ -18,7 +18,7 @@ const Header = () => {
             <header className="container mx-auto px-8 py-8">
                 <div className="flex items-center justify-between text-pink-300">
                     <div>
-                        <a href="#" className="focus:outline-none focus:ring-4 focus:ring-pink-700">
+                        <a href="#" className="focus:outline-none focus:ring-2 focus:ring-pink-700">
                             <span
                                 className="font-bold text-lg tracking-light whitespace-nowrap"
                             >
@@ -55,7 +55,7 @@ const Header = () => {
                         <li className="border-b border-gray-400">
                             <button
                                 id="why-intelliflex"
-                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700"
+                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
                                 onClick={() => handleDropdownClick('why-intelliflex')}
                             >
                                 <span>Why IntellifleX?</span>
@@ -78,22 +78,34 @@ const Header = () => {
                             >
                                 <ul>
                                     <li className="">
-                                        <NavLink to="/why-intelliflex/managers">
+                                        <NavLink
+                                            to="/why-intelliflex/managers"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Managers
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/why-intelliflex/creative-strategists">
+                                        <NavLink
+                                            to="/why-intelliflex/creative-strategists"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Creative Strategists
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/why-intelliflex/designers">
+                                        <NavLink
+                                            to="/why-intelliflex/designers"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Designers
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/why-intelliflex/developers">
+                                        <NavLink
+                                            to="/why-intelliflex/developers"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Developers
                                         </NavLink>
                                     </li>
@@ -103,7 +115,7 @@ const Header = () => {
                         <li className="border-b border-gray-400">
                             <button
                                 id="resources"
-                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700"
+                                className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
                                 onClick={() => handleDropdownClick('resources')}
                             >
                                 <span>Resources</span>
@@ -126,22 +138,34 @@ const Header = () => {
                             >
                                 <ul>
                                     <li>
-                                        <NavLink to="/resources/testimony">
+                                        <NavLink
+                                            to="/resources/testimony"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Testimony
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/resources/guides-and-tutorials">
+                                        <NavLink
+                                            to="/resources/guides-and-tutorials"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Guides & Tutorials
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/resources/api-docs">
+                                        <NavLink
+                                            to="/resources/api-docs"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             API Docs
                                         </NavLink>
                                     </li>
                                     <li className="menu-item">
-                                        <NavLink to="/resources/blog">
+                                        <NavLink
+                                            to="/resources/blog"
+                                            className="pl-2 text-sm hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700"
+                                        >
                                             Blog
                                         </NavLink>
                                     </li>
@@ -149,17 +173,17 @@ const Header = () => {
                             </nav>
                         </li>
                         <li className="border-b border-gray-400">
-                            <NavLink to="/download" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <NavLink to="/download" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700">
                                 Download
                             </NavLink>
                         </li>
                         <li className="border-b border-gray-400">
-                            <NavLink to="/mission" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <NavLink to="/mission" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700">
                                 Mission
                             </NavLink>
                         </li>
                         <li className="border-b border-gray-400">
-                            <NavLink to="/pricing" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <NavLink to="/pricing" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700">
                                 Pricing
                             </NavLink>
                         </li>
@@ -168,20 +192,20 @@ const Header = () => {
                 <div>
                     <ul>
                         <li className="border-b border-gray-400">
-                            <NavLink to="/book-a-demo" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <NavLink to="/book-a-demo" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-700">
                                 Book a Demo
                             </NavLink>
                         </li>
                         <li className="pt-6 pb-2">
-                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600">
-                                <NavLink to="/log-in" className="text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600 hover:bg-pink-400 active:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-700">
+                                <NavLink to="/log-in" className="text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-pink-700">
                                     Log In
                                 </NavLink>
                             </button>
                         </li>
                         <li className="py-2">
-                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600">
-                                <NavLink to="/get-started" className="text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-pink-700">
+                            <button className="block w-full py-1 px-2 border border-white rounded-lg bg-pink-600 hover:bg-pink-400 active:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-700">
+                                <NavLink to="/get-started" className="text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-pink-700">
                                     Get Started
                                 </NavLink>
                             </button>
