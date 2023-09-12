@@ -1,11 +1,13 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import Home from './pages/Home'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
         <Route path="why-intelliflex" element={<h1>Why IntellifleX?</h1>} />
         <Route path="why-intelliflex/managers" element={<h1>Managers</h1>} />
         <Route path="why-intelliflex/creative-strategists" element={<h1>Creative Strategists</h1>} />
