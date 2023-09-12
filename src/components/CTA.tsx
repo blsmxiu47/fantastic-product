@@ -5,7 +5,7 @@ type Props = {
 
 const CTA = ({ text }: Props) => {
     return (
-        <button className="bg-pink-600 text-white rounded-lg border border-white mx-2 text-xs md:text-sm lg:text-lg xl:text-xl min-w-fit px-4 py-2">{text}</button>
+        <button className="min-w-fit my-2 px-4 py-2 text-white text-sm lg:text-lg xl:text-xl rounded-lg border border-white bg-pink-600 hover:bg-pink-400 active:bg-pink-500">{text}</button>
     );
 }
 
