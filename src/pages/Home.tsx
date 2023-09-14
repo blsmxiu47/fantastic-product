@@ -26,37 +26,37 @@ const Home = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-4">
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
-                        imageTitle="Placeholder"
+                        imageAlt="Placeholder"
                         cardTitle="Something great is here"
                         cardText="Don't you want to know what it is? Let's find out together."
                     />
@@ -68,12 +68,36 @@ const Home = () => {
             <section className="container">
                 <div className="grid grid-cols-1 sm:grid-cols-2">
                     <div>
-                        <CtaCard />
+                        <CtaCard
+                            imageUrl="https://placehold.jp/150x120.png"
+                            imageAlt="Placeholder"
+                            cardTitle="Something great is here"
+                            cardText="Don't you want to know what it is? Let's find out together."
+                        
+                        />
+                        <CtaCard
+                            imageUrl="https://placehold.jp/150x120.png"
+                            imageAlt="Placeholder"
+                            cardTitle="Something great is here"
+                            cardText="Don't you want to know what it is? Let's find out together."
+                        
+                        />
+                        <CtaCard
+                            imageUrl="https://placehold.jp/150x120.png"
+                            imageAlt="Placeholder"
+                            cardTitle="Something great is here"
+                            cardText="Don't you want to know what it is? Let's find out together."
+                        
+                        />
                     </div>
                     <div className="grid grid-cols-1">
-                        <CtaCard />
-                        <CtaCard />
-                        <CtaCard />
+                        <CtaCard
+                            imageUrl="https://placehold.jp/150x120.png"
+                            imageAlt="Placeholder"
+                            cardTitle="Something great is here"
+                            cardText="Don't you want to know what it is? Let's find out together."
+                        
+                        />
                     </div>                        
                 </div>
             </section>
