@@ -63,7 +63,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="container">
-                <Carousel items={[]} />
+                <Carousel urls={["https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png"]} />
             </section>
             <section className="container">
                 <div className="grid grid-cols-1 sm:grid-cols-2">
