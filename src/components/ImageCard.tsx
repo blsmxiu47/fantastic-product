@@ -1,12 +1,6 @@
-// define image type
-type Props = {
-    imageUrl: string,
-    imageTitle: string,
-    cardTitle: string,
-    cardText: string,
-}
+import { TCardProps } from "../lib/types"
 
-const ImageCard = ({ imageUrl, imageTitle, cardTitle, cardText }: Props)  => {
+const ImageCard = ({ cardTitle, cardText, imageUrl, imageAlt }: TCardProps)  => {
     return (
         <div className="m-4 md:m-8 px-4 pt-4 border rounded-xl shadow-lg overflow-hidden bg-gradient-to-r from-slate-800">
             <div className="px-6 py-4">
@@ -15,7 +9,7 @@ const ImageCard = ({ imageUrl, imageTitle, cardTitle, cardText }: Props)  => {
             </div>
             <img
                 src={imageUrl}
-                alt={imageTitle}
+                alt={imageAlt}
                 className="w-full"
             />
         </div>
