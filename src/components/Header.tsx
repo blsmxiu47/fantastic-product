@@ -15,10 +15,10 @@ const Header = () => {
 
     return (
         <>
-            <header className="container mx-auto px-8 py-8">
+            <header className="px-8 py-8 z-10 bg-black w-full">
                 <div className="flex items-center justify-between text-pink-300">
                     <div>
-                        <a href="#" className="">
+                        <a href="/">
                             <span
                                 className="font-bold text-lg tracking-light whitespace-nowrap"
                             >
@@ -49,10 +49,10 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <nav className={`${mobileNavOpen ? '': 'hidden'} flex flex-col justify-between pt-8 px-2`}>
+            <nav className={`absolute z-0 top-0 transform transition-transform duration-300 w-full bg-black flex flex-col justify-between px-2${mobileNavOpen ? ' translate-y-[94px]': ' -translate-y-full'}`}>
                 <div>
                     <ul>
-                        <li className="border-b border-gray-400">
+                        <li className="border-t border-b border-gray-400">
                             <button
                                 id="why-intelliflex"
                                 className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400" 
@@ -77,7 +77,7 @@ const Header = () => {
                                 className="hidden text-pink-300 pl-2"
                             >
                                 <ul>
-                                    <li className="">
+                                    <li>
                                         <NavLink
                                             to="/why-intelliflex/managers"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -85,7 +85,7 @@ const Header = () => {
                                             Managers
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/why-intelliflex/creative-strategists"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -93,7 +93,7 @@ const Header = () => {
                                             Creative Strategists
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/why-intelliflex/designers"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -101,7 +101,7 @@ const Header = () => {
                                             Designers
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/why-intelliflex/developers"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -145,7 +145,7 @@ const Header = () => {
                                             Testimony
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/resources/guides-and-tutorials"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -153,7 +153,7 @@ const Header = () => {
                                             Guides & Tutorials
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/resources/api-docs"
                                             className="pl-2 text-sm hover:text-pink-400"
@@ -161,7 +161,7 @@ const Header = () => {
                                             API Docs
                                         </NavLink>
                                     </li>
-                                    <li className="menu-item">
+                                    <li>
                                         <NavLink
                                             to="/resources/blog"
                                             className="pl-2 text-sm hover:text-pink-400"
