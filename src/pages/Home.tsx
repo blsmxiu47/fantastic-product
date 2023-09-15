@@ -22,8 +22,8 @@ const Home = () => {
                     <img src="https://placehold.jp/1200x800.png" alt="placeholder" className="w-full" />
                 </div>
             </section>
-            <section className="container">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-4">
+            <section className="container my-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mx-8">
                     <ImageCard
                         imageUrl="https://placehold.jp/150x120.png"
                         imageAlt="Placeholder"
@@ -62,37 +62,37 @@ const Home = () => {
                     />
                 </div>
             </section>
-            <section className="container">
+            <section className="container my-4">
                 <Carousel urls={["https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png"]} />
             </section>
-            <section className="container">
-                <div className="grid grid-cols-1 sm:grid-cols-2">
-                    <div>
+            <section className="container my-4 content-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                    <div className="grid grid-cols-1 gap-4 md:gap-8">
                         <CtaCard
-                            imageUrl="https://placehold.jp/150x120.png"
+                            imageUrl="https://placehold.jp/150x136.png"
                             imageAlt="Placeholder"
                             cardTitle="Something great is here"
                             cardText="Don't you want to know what it is? Let's find out together."
                         
                         />
                         <CtaCard
-                            imageUrl="https://placehold.jp/150x120.png"
+                            imageUrl="https://placehold.jp/150x136.png"
                             imageAlt="Placeholder"
                             cardTitle="Something great is here"
                             cardText="Don't you want to know what it is? Let's find out together."
                         
                         />
                         <CtaCard
-                            imageUrl="https://placehold.jp/150x120.png"
+                            imageUrl="https://placehold.jp/150x136.png"
                             imageAlt="Placeholder"
                             cardTitle="Something great is here"
                             cardText="Don't you want to know what it is? Let's find out together."
                         
                         />
                     </div>
-                    <div className="grid grid-cols-1">
-                        <CtaCard
-                            imageUrl="https://placehold.jp/150x120.png"
+                    <div className="grid grid-cols-1 gap-4 md:gap-8">
+                        <ImageCard
+                            imageUrl="https://placehold.jp/160x240.png"
                             imageAlt="Placeholder"
                             cardTitle="Something great is here"
                             cardText="Don't you want to know what it is? Let's find out together."
