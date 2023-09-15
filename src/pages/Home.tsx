@@ -66,7 +66,7 @@ const Home = () => {
                 <Carousel urls={["https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png", "https://placehold.jp/90x60.png"]} />
             </section>
             <section className="container my-4 content-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mx-8">
                     <div className="grid grid-cols-1 gap-4 md:gap-8">
                         <CtaCard
                             imageUrl="https://placehold.jp/150x136.png"

@@ -4,12 +4,12 @@ import { TCardProps } from "../lib/types"
 
 const CtaCard = ({cardTitle, cardText, imageUrl,  imageAlt}: TCardProps) => {
     return (
-        <div className="flex flex-row max-w-xs mx-auto text-white border rounded-xl shadow-lg overflow-hidden bg-gradient-to-r from-slate-800">
-            <div className="w-[50%] p-4">
+        <div className="flex flex-col sm:flex-row max-w-xs mx-auto text-white border rounded-xl shadow-lg overflow-hidden bg-gradient-to-r from-slate-800">
+            <div className="p-4">
                 <h3 className="font-bold text-base md:text-xl mb-2 text-white">{cardTitle}</h3>
-                <p className="text-xs md:text-base text-white">{cardText}</p>
+                <p className="text-[0.6rem] sm:text-xs md:text-base text-white">{cardText}</p>
             </div>
-            <div>
+            <div className="">
                 <img src={imageUrl} alt={imageAlt} />
             </div>
         </div>
