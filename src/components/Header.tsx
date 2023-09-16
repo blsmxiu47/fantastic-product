@@ -3,19 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  
     const handleDropdownClick = (targetId: string) => {
-        const targetMenu = document.getElementById(`${targetId}-menu`);
-        // unhide menu
-        targetMenu?.classList.toggle('hidden');
-        const targetChevron = document.getElementById(`${targetId}-chevron`);
-        // rotate chevron
-        targetChevron?.classList.toggle('rotate-90');
-    }
+      setActiveDropdown((prevId) => (prevId === targetId ? null : targetId));
+    };
 
     return (
         <>
-            <header className="px-8 py-8 z-10 bg-black w-full">
+            <header className="px-8 py-4 z-10 bg-black w-full">
                 <div className="flex items-center justify-between text-pink-300">
                     <div>
                         <a href="/">
@@ -26,6 +22,141 @@ const Header = () => {
                             </span>
                         </a>
                     </div>
+                    <nav>
+                        <ul className="hidden md:flex items-center space-x-8">
+                            <li>
+                                <button
+                                    onClick={() => handleDropdownClick('why-intelliflex')}    
+                                >
+                                    <span>Why IntellifleX?</span>
+                                    <svg
+                                        id="why-intelliflex-chevron"
+                                        fill="currentColor"
+                                        viewBox="0 0 16 16"
+                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'why-intelliflex' ? ' rotate-90' : ''}`}
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                                <nav
+                                    id='why-intelliflex-menu'
+                                    className={`absolute top-[64px] bg-black text-pink-300 pt-2 pb-4 px-4 rounded-b-lg border-b border-x border-pink-300${activeDropdown === 'why-intelliflex' ? '' : ' hidden'}`}
+                                >
+                                    <ul>
+                                        <li>
+                                            <NavLink
+                                                to="/why-intelliflex/managers"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Managers
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/why-intelliflex/creative-strategists"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Creative Strategists
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/why-intelliflex/designers"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Designers
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/why-intelliflex/developers"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Developers
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li>
+                                <button
+                                    onClick={() => handleDropdownClick('resources')}
+                                >
+                                    <span>Resources</span>
+                                    <svg
+                                        id="resources-chevron"
+                                        fill="currentColor"
+                                        viewBox="0 0 16 16"
+                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'resources' ? ' rotate-90' : ''}`}
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
+                                <nav
+                                    id='resources-menu'
+                                    className={`absolute top-[64px] bg-black text-pink-300 pt-2 pb-4 px-4 rounded-b-lg border-b border-x border-pink-300${activeDropdown === 'resources' ? '' : ' hidden'}`}
+                                >
+                                    <ul>
+                                        <li>
+                                            <NavLink
+                                                to="/resources/testimony"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Testimony
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/resources/guides-and-tutorials"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Guides & Tutorials
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/resources/api-docs"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                API Docs
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/resources/blog"
+                                                className="pl-2 text-sm hover:text-pink-400"
+                                            >
+                                                Blog
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li>
+                                <NavLink to="/download" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400">
+                                    Download
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/mission" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400">
+                                    Mission
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/pricing" className="block w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400">
+                                    Pricing
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
                     <div>
                         <button
                             className="md:hidden rounded-lg transition ease transform duration-300"
@@ -63,7 +194,7 @@ const Header = () => {
                                     id="why-intelliflex-chevron"
                                     fill="currentColor"
                                     viewBox="0 0 16 16"
-                                    className="transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle"
+                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'why-intelliflex' ? ' rotate-90' : ''}`}
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -74,7 +205,7 @@ const Header = () => {
                             </button>
                             <nav
                                 id='why-intelliflex-menu'
-                                className="hidden text-pink-300 pl-2"
+                                className={`text-pink-300 pl-2${activeDropdown === 'why-intelliflex' ? '' : ' hidden'}`}
                             >
                                 <ul>
                                     <li>
@@ -123,7 +254,7 @@ const Header = () => {
                                     id="resources-chevron"
                                     fill="currentColor"
                                     viewBox="0 0 16 16"
-                                    className="transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle"
+                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'resources' ? ' rotate-90' : ''}`}
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -134,7 +265,7 @@ const Header = () => {
                             </button>
                             <nav
                                 id='resources-menu'
-                                className="hidden text-pink-300 pl-2"
+                                className={`text-pink-300 pl-2${activeDropdown === 'resources' ? '' : ' hidden'}`}
                             >
                                 <ul>
                                     <li>
