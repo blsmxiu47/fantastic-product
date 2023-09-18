@@ -33,7 +33,7 @@ const Header = () => {
                                         id="why-intelliflex-chevron"
                                         fill="currentColor"
                                         viewBox="0 0 16 16"
-                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'why-intelliflex' ? ' rotate-90' : ''}`}
+                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 align-middle ml-2${activeDropdown === 'why-intelliflex' ? ' rotate-90' : ''}`}
                                     >
                                         <path
                                             fillRule="evenodd"
@@ -91,7 +91,7 @@ const Header = () => {
                                         id="resources-chevron"
                                         fill="currentColor"
                                         viewBox="0 0 16 16"
-                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'resources' ? ' rotate-90' : ''}`}
+                                        className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 align-middle ml-2${activeDropdown === 'resources' ? ' rotate-90' : ''}`}
                                     >
                                         <path
                                             fillRule="evenodd"
@@ -180,7 +180,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <nav className={`absolute z-0 top-0 transform transition-transform duration-300 w-full bg-black flex flex-col justify-between px-2${mobileNavOpen ? ' translate-y-[94px]': ' -translate-y-full'}`}>
+            <nav className={`absolute z-0 top-0 transform transition-transform duration-300 w-full bg-black flex flex-col justify-between px-2${mobileNavOpen ? ' translate-y-[62px]': ' -translate-y-full'}`}>
                 <div>
                     <ul>
                         <li className="border-t border-b border-gray-400">
