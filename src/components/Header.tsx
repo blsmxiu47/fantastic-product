@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -8,6 +8,23 @@ const Header = () => {
     const handleDropdownClick = (targetId: string) => {
       setActiveDropdown((prevId) => (prevId === targetId ? null : targetId));
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                if (mobileNavOpen) {
+                    setMobileNavOpen(false);
+                }
+                if (activeDropdown) {
+                    setActiveDropdown(null);
+                }
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [mobileNavOpen]);
 
     return (
         <>
@@ -185,16 +202,16 @@ const Header = () => {
                     <ul>
                         <li className="border-t border-b border-gray-400">
                             <button
-                                id="why-intelliflex"
+                                id="why-intelliflex-mobile"
                                 className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400" 
-                                onClick={() => handleDropdownClick('why-intelliflex')}
+                                onClick={() => handleDropdownClick('why-intelliflex-mobile')}
                             >
                                 <span>Why IntellifleX?</span>
                                 <svg
-                                    id="why-intelliflex-chevron"
+                                    id="why-intelliflex-mobile-chevron"
                                     fill="currentColor"
                                     viewBox="0 0 16 16"
-                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'why-intelliflex' ? ' rotate-90' : ''}`}
+                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'why-intelliflex-mobile' ? ' rotate-90' : ''}`}
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -204,8 +221,8 @@ const Header = () => {
                                 </svg>
                             </button>
                             <nav
-                                id='why-intelliflex-menu'
-                                className={`text-pink-300 pl-2${activeDropdown === 'why-intelliflex' ? '' : ' hidden'}`}
+                                id='why-intelliflex-mobile-menu'
+                                className={`text-pink-300 pl-2${activeDropdown === 'why-intelliflex-mobile' ? '' : ' hidden'}`}
                             >
                                 <ul>
                                     <li>
@@ -245,16 +262,16 @@ const Header = () => {
                         </li>
                         <li className="border-b border-gray-400">
                             <button
-                                id="resources"
+                                id="resources-mobile"
                                 className="w-full py-2 px-2 text-left text-sm leading-4 font-medium text-pink-300 hover:text-pink-400"
-                                onClick={() => handleDropdownClick('resources')}
+                                onClick={() => handleDropdownClick('resources-mobile')}
                             >
                                 <span>Resources</span>
                                 <svg
-                                    id="resources-chevron"
+                                    id="resources-mobile-chevron"
                                     fill="currentColor"
                                     viewBox="0 0 16 16"
-                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'resources' ? ' rotate-90' : ''}`}
+                                    className={`transition origin-center duration-800 ease-in-out inline w-4 h-4 absolute right-4 align-middle${activeDropdown === 'resources-mobile' ? ' rotate-90' : ''}`}
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -264,8 +281,8 @@ const Header = () => {
                                 </svg>
                             </button>
                             <nav
-                                id='resources-menu'
-                                className={`text-pink-300 pl-2${activeDropdown === 'resources' ? '' : ' hidden'}`}
+                                id='resources-mobile-menu'
+                                className={`text-pink-300 pl-2${activeDropdown === 'resources-mobile' ? '' : ' hidden'}`}
                             >
                                 <ul>
                                     <li>
