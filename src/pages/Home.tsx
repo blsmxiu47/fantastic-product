@@ -92,7 +92,7 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-1 gap-4 md:gap-8">
                         <ImageCard
-                            imageUrl="https://placehold.jp/160x240.png"
+                            imageUrl="https://placehold.jp/160x200.png"
                             imageAlt="Placeholder"
                             cardTitle="Something great is here"
                             cardText="Don't you want to know what it is? Let's find out together."

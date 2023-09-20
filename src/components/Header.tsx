@@ -45,7 +45,7 @@ const Header = () => {
                                 <button
                                     onClick={() => handleDropdownClick('why-intelliflex')}    
                                 >
-                                    <span>Why IntellifleX?</span>
+                                    <span className="text-sm font-medium">Why IntellifleX?</span>
                                     <svg
                                         id="why-intelliflex-chevron"
                                         fill="currentColor"
@@ -103,7 +103,7 @@ const Header = () => {
                                 <button
                                     onClick={() => handleDropdownClick('resources')}
                                 >
-                                    <span>Resources</span>
+                                    <span className="text-sm font-medium">Resources</span>
                                     <svg
                                         id="resources-chevron"
                                         fill="currentColor"
